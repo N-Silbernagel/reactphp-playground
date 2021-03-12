@@ -13,7 +13,5 @@ use React\Http\Message\Response;
  */
 Trait IndexResponse
 {
-    public static bool $handlesIndex = true;
-
     abstract public static function index(ServerRequestInterface $request): Response;
 }
