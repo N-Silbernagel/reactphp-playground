@@ -1,0 +1,12 @@
+{
+  "name": "nsilbernagel/test",
+  "description": "a test",
+  "require": {
+    "react/http": "^1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "app\\": "src/"
+    }
+  }
+}

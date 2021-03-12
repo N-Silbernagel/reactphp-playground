@@ -1,0 +1,11 @@
+version: '3'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: PHP.Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    command: nodemon main.php
