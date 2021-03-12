@@ -9,7 +9,7 @@
 ### Setup
 
 - clone this repo
-- setup docker environment ```docker-compose-up```
+- setup docker environment ```docker-compose up```
 - install dependencies ```docker-compose run composer install```
   
 ### Run
