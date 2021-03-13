@@ -1,4 +1,4 @@
-# ReactPHP-Playground
+# ReactPHP-Test
 
 ## This is a small reactPHP playground for myself and everybody who might need something similar
 
