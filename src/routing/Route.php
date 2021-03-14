@@ -10,7 +10,7 @@ class Route
 {
     public function __construct(
         /** the uri path which the Route Handles */
-        private string $uri,
+        private string $path,
         /** the methods the route is reachable through */
         private array $methods,
         /** @var Controller The Controller class to handle the route's logic */
@@ -22,9 +22,9 @@ class Route
     /**
      * @return string
      */
-    public function getUri(): string
+    public function getPath(): string
     {
-        return $this->uri;
+        return $this->path;
     }
 
     /**

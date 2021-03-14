@@ -73,7 +73,7 @@ class Router
     {
         /** @var Route|null $matchingRoute */
         $matchingRoutesForPath = array_filter($this->routes, function (Route $route) use ($request) {
-            return trim($route->getUri(), '/') === trim($request->getUri()->getPath(), '/');
+            return trim($route->getPath(), '/') === trim($request->getUri()->getPath(), '/');
         });
         if(empty($matchingRoutesForPath)){
             return new Response(
