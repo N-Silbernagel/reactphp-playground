@@ -1,8 +1,7 @@
 
 <?php
 
-use app\controller\HomeController;
-use app\controller\UserController;
+use app\controller\{HomeController, UserController, TestController};
 use app\Environment;
 use app\routing\Router;
 use Psr\Http\Message\ServerRequestInterface;
@@ -16,6 +15,7 @@ $loop = Factory::create();
 $router = (new Router())
     ->registerController(new HomeController())
     ->registerController(new UserController())
+    ->registerController(new TestController())
     ->resolveRoutes();
 
 $server = new Server($loop, function (ServerRequestInterface $request) use ($router) {
