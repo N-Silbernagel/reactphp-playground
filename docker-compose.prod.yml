@@ -2,3 +2,5 @@ version: '3'
 services:
   php:
     command: "php main.php"
+    environment:
+      - ENV=prod
