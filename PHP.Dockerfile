@@ -6,4 +6,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt install -y nodejs
 RUN npm i -g nodemon
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+COPY ./php.ini /usr/local/etc/php/php.ini
 WORKDIR /app

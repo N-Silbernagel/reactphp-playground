@@ -2,7 +2,6 @@
 <?php
 
 use app\controller\{HomeController, UserController, TestController};
-use app\Environment;
 use app\routing\Router;
 use Psr\Http\Message\ServerRequestInterface;
 use React\EventLoop\Factory;
@@ -19,15 +18,16 @@ $router = (new Router())
     ->resolveRoutes();
 
 $server = new Server($loop, function (ServerRequestInterface $request) use ($router) {
-    return $router->route($request);
+    try {
+        return $router->route($request);
+    } catch (Throwable $e) {
+        echo $e->getMessage() . PHP_EOL;
+        echo $e->getTraceAsString() . PHP_EOL;
+    }
 });
 
 $socket = new \React\Socket\Server('0.0.0.0:3000', $loop);
 $server->listen($socket);
-
-if(Environment::isProd()){
-    $server->on('error', 'printf');
-}
 
 echo 'Listening on ' . str_replace('tcp:', 'http:', $socket->getAddress()) . PHP_EOL;
 

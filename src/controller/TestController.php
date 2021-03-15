@@ -6,12 +6,13 @@ namespace app\controller;
 
 use app\routing\JsonResponse;
 use app\routing\Router;
+use Psr\Http\Message\ServerRequestInterface;
 use React\Http\Message\Response;
 
 class TestController implements Controller
 {
     #[Route('sync', [Router::GET])]
-    public function sync(): Response
+    public static function sync(): Response
     {
         return JsonResponse::generate([
             "data" => "here",
@@ -19,7 +20,7 @@ class TestController implements Controller
     }
 
     #[Route('async', [Router::GET])]
-    public function async(): Response
+    public static function async(): Response
     {
         return JsonResponse::generate([
             "data" => "here",

@@ -1,6 +1,7 @@
 version: '3'
 services:
   php:
+    tty: false
     command: "php main.php"
     environment:
       - ENV=prod
