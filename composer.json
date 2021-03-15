@@ -2,7 +2,8 @@
   "name": "nsilbernagel/test",
   "description": "a test",
   "require": {
-    "react/http": "^1.2"
+    "react/http": "^1.2",
+    "nesbot/carbon": "^2.46"
   },
   "autoload": {
     "psr-4": {
